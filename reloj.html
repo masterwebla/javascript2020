@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Reloj con Javscript</title>
+</head>
+<body>
+	<h1 id="hora"></h1>
+	<script>
+
+		function reloj(){
+			var fecha = new Date();
+			var hora = fecha.getHours();
+			var minutos = fecha.getMinutes();
+			var segundos = fecha.getSeconds();
+
+			if(hora<10)
+				hora = "0"+hora;
+			if(minutos<10)
+				minutos = "0"+minutos;
+			if(segundos<10)
+				segundos = "0"+segundos;
+
+			var reloj = hora+":"+minutos+":"+segundos;
+			document.getElementById("hora").innerHTML = reloj;
+		}
+			
+		setInterval(reloj,1000);
+	</script>
+</body>
+</html>
